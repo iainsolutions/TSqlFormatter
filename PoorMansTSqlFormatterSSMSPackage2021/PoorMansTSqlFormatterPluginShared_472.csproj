@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C350944-937B-4416-8442-3197FC7098F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PoorMansTSqlFormatterPluginShared</RootNamespace>
+    <AssemblyName>PoorMansTSqlFormatterPluginShared</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\PoorMansTSqlFormatterPluginShared\Key.snk</AssemblyOriginatorKeyFile>
+    <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+    <RuntimeIdentifiers>win;win-x64;win-x86;win-arm64</RuntimeIdentifiers>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\PoorMansTSqlFormatterPluginShared\AboutBox.cs">
+      <Link>AboutBox.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PoorMansTSqlFormatterPluginShared\AboutBox.designer.cs">
+      <Link>AboutBox.designer.cs</Link>
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\PoorMansTSqlFormatterPluginShared\GeneralLanguageContent.Designer.cs">
+      <Link>GeneralLanguageContent.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeneralLanguageContent.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\PoorMansTSqlFormatterPluginShared\ISqlSettings.cs">
+      <Link>ISqlSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\PoorMansTSqlFormatterPluginShared\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\PoorMansTSqlFormatterPluginShared\SettingsForm.cs">
+      <Link>SettingsForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PoorMansTSqlFormatterPluginShared\SettingsForm.Designer.cs">
+      <Link>SettingsForm.Designer.cs</Link>
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\PoorMansTSqlFormatterPluginShared\Utils.cs">
+      <Link>Utils.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\PoorMansTSqlFormatterPluginShared\AboutBox.resx">
+      <Link>AboutBox.resx</Link>
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PoorMansTSqlFormatterPluginShared\AboutBox.es.resx">
+      <Link>AboutBox.es.resx</Link>
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PoorMansTSqlFormatterPluginShared\AboutBox.fr.resx">
+      <Link>AboutBox.fr.resx</Link>
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PoorMansTSqlFormatterPluginShared\GeneralLanguageContent.resx">
+      <Link>GeneralLanguageContent.resx</Link>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GeneralLanguageContent.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PoorMansTSqlFormatterPluginShared\GeneralLanguageContent.es.resx">
+      <Link>GeneralLanguageContent.es.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PoorMansTSqlFormatterPluginShared\GeneralLanguageContent.fr.resx">
+      <Link>GeneralLanguageContent.fr.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PoorMansTSqlFormatterPluginShared\SettingsForm.resx">
+      <Link>SettingsForm.resx</Link>
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PoorMansTSqlFormatterPluginShared\SettingsForm.es.resx">
+      <Link>SettingsForm.es.resx</Link>
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PoorMansTSqlFormatterPluginShared\SettingsForm.fr.resx">
+      <Link>SettingsForm.fr.resx</Link>
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="PoorMansTSqlFormatterLib_472.csproj">
+      <Project>{BDBDFDCA-CAB6-4569-9151-0BD42E65B401}</Project>
+      <Name>PoorMansTSqlFormatterLib_472</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

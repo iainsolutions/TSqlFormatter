@@ -2193,6 +2193,50 @@ namespace PoorMansTSqlFormatterLib.Parsers
             KeywordList.Add("XLOCK", KeywordType.OtherKeyword);
             KeywordList.Add("XML", KeywordType.DataTypeKeyword);
             KeywordList.Add("YEAR", KeywordType.FunctionKeyword);
+
+            // SQL Server 2016-2019 Functions
+            KeywordList.Add("STRING_SPLIT", KeywordType.FunctionKeyword);
+            KeywordList.Add("STRING_AGG", KeywordType.FunctionKeyword);
+            KeywordList.Add("STRING_ESCAPE", KeywordType.FunctionKeyword);
+            KeywordList.Add("CONCAT_WS", KeywordType.FunctionKeyword);
+            KeywordList.Add("TRANSLATE", KeywordType.FunctionKeyword);
+            KeywordList.Add("OPENJSON", KeywordType.FunctionKeyword);
+            KeywordList.Add("ISJSON", KeywordType.FunctionKeyword);
+            KeywordList.Add("JSON_VALUE", KeywordType.FunctionKeyword);
+            KeywordList.Add("JSON_QUERY", KeywordType.FunctionKeyword);
+            KeywordList.Add("JSON_MODIFY", KeywordType.FunctionKeyword);
+            KeywordList.Add("JSON_PATH_EXISTS", KeywordType.FunctionKeyword);
+            KeywordList.Add("COMPRESS", KeywordType.FunctionKeyword);
+            KeywordList.Add("DECOMPRESS", KeywordType.FunctionKeyword);
+            KeywordList.Add("SESSION_CONTEXT", KeywordType.FunctionKeyword);
+            KeywordList.Add("APPROX_COUNT_DISTINCT", KeywordType.FunctionKeyword);
+
+            // SQL Server 2022 Functions
+            KeywordList.Add("DATE_BUCKET", KeywordType.FunctionKeyword);
+            KeywordList.Add("DATETRUNC", KeywordType.FunctionKeyword);
+            KeywordList.Add("GENERATE_SERIES", KeywordType.FunctionKeyword);
+            KeywordList.Add("GREATEST", KeywordType.FunctionKeyword);
+            KeywordList.Add("LEAST", KeywordType.FunctionKeyword);
+            KeywordList.Add("GET_BIT", KeywordType.FunctionKeyword);
+            KeywordList.Add("SET_BIT", KeywordType.FunctionKeyword);
+            KeywordList.Add("LEFT_SHIFT", KeywordType.FunctionKeyword);
+            KeywordList.Add("RIGHT_SHIFT", KeywordType.FunctionKeyword);
+            KeywordList.Add("BIT_COUNT", KeywordType.FunctionKeyword);
+            KeywordList.Add("APPROX_PERCENTILE_CONT", KeywordType.FunctionKeyword);
+            KeywordList.Add("APPROX_PERCENTILE_DISC", KeywordType.FunctionKeyword);
+            KeywordList.Add("WINDOW", KeywordType.FunctionKeyword);
+            KeywordList.Add("FIRST_VALUE", KeywordType.FunctionKeyword);
+            KeywordList.Add("LAST_VALUE", KeywordType.FunctionKeyword);
+            KeywordList.Add("LAG", KeywordType.FunctionKeyword);
+            KeywordList.Add("LEAD", KeywordType.FunctionKeyword);
+
+            // SQL Server 2016+ Syntax Keywords
+            KeywordList.Add("AT", KeywordType.OtherKeyword); // For AT TIME ZONE
+            KeywordList.Add("ZONE", KeywordType.OtherKeyword); // For AT TIME ZONE
+            KeywordList.Add("DISTINCT", KeywordType.OtherKeyword); // For IS DISTINCT FROM
+            KeywordList.Add("IGNORE", KeywordType.OtherKeyword); // For IGNORE NULLS
+            KeywordList.Add("RESPECT", KeywordType.OtherKeyword); // For RESPECT NULLS
+            KeywordList.Add("WITHIN", KeywordType.OtherKeyword); // For WITHIN GROUP
         }
 
         public enum KeywordType
