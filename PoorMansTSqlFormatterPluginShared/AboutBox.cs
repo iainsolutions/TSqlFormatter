@@ -35,6 +35,9 @@ namespace PoorMansTSqlFormatterPluginShared
         {
             InitializeComponent();
 
+            // Apply modern UI styling
+            ModernUIHelper.StyleForm(this);
+
             var _generalResourceManager = new System.Resources.ResourceManager("PoorMansTSqlFormatterPluginShared.GeneralLanguageContent", System.Reflection.Assembly.GetExecutingAssembly());
             this.Text = String.Format(_generalResourceManager.GetString("AboutTitleLabel"), AssemblyTitle(ProductAssembly));
 

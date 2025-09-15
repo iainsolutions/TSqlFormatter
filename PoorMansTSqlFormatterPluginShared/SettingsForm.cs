@@ -73,6 +73,9 @@ namespace PoorMansTSqlFormatterPluginShared
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
+            // Apply modern UI styling
+            ModernUIHelper.StyleForm(this);
+
             LoadControlValuesFromSettings();
         }
 

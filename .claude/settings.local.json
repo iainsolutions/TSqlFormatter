@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(cmd /c:*)",
+      "Bash(dotnet build:*)",
+      "Bash(dotnet clean:*)",
+      "Bash(dotnet restore:*)",
+      "Bash(\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\MSBuild.exe\" /t:Restore PoorMansTSqlFormatterSSMS21.sln)",
+      "Bash(powershell:*)"
     ],
     "deny": [],
     "ask": []

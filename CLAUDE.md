@@ -6,14 +6,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Poor Man's T-SQL Formatter is a .NET 2.0 and JavaScript library for reformatting T-SQL code. It includes multiple components: a core formatting library, WinForms demo app, SSMS/Visual Studio add-ins, command-line utility, Notepad++ plugin, WinMerge plugin, and web service.
 
+The project now includes a streamlined SSMS 21 solution (`PoorMansTSqlFormatterSSMS21.sln`) specifically for SQL Server Management Studio 21+ support.
+
 ## Build Commands
 
-### Building the Solution
+### Building the Solutions
 ```bash
 # Build the main solution (requires Visual Studio 2013+ or MSBuild)
 msbuild PoorMansTSqlFormatter.sln /p:Configuration=Release /p:Platform="Any CPU"
 
-# Build the .NET Standard version
+# Build the streamlined SSMS 21 solution
+msbuild PoorMansTSqlFormatterSSMS21.sln /p:Configuration=Release /p:Platform="Any CPU"
+
+# Build the .NET Standard version (if exists)
 msbuild PoorMansTSqlFormatterNetStandard.sln /p:Configuration=Release
 
 # Build specific VS/SSMS packages
@@ -57,13 +62,20 @@ PoorMansTSqlFormatterTest\bin\Release\PoorMansTSqlFormatterTests.exe
 - **Command Line**: PoorMansTSqlFormatterCmdLine - uses NDesk.Options for argument parsing
 - **SSMS Add-ins**:
   - PoorMansTSqlFormatterSSMSAddIn (SSMS 2005-2008R2 via COM)
-  - PoorMansTSqlFormatterSSMSPackage (SSMS 2012+)
-  - PoorMansTSqlFormatterSSMSPackage2021 (SSMS 18+)
+  - PoorMansTSqlFormatterSSMSPackage (SSMS 2012-17)
+  - PoorMansTSqlFormatterSSMSPackage2021 (SSMS 18-21+, now with streamlined solution)
 - **VS Extensions**:
   - PoorMansTSqlFormatterVSPackage2013
   - PoorMansTSqlFormatterVSPackage2019
 - **Notepad++ Plugin**: PoorMansTSqlFormatterNppPlugin - uses UnmanagedExports for native integration
 - **Web Demo**: PoorMansTSqlFormatterWebDemo - includes JS library and web service
+
+### SSMS 21 Streamlined Solution Structure
+The `PoorMansTSqlFormatterSSMS21.sln` solution contains:
+- **PoorMansTSqlFormatterLib_472** - Core formatting library for .NET 4.7.2
+- **PoorMansTSqlFormatterPluginShared_472** - Shared plugin functionality
+- **PoorMansTSqlFormatterSSMSLib_472** - SSMS-specific library components
+- **PoorMansTSqlFormatterSSMSPackage2021** - VSIX package for SSMS 21+
 
 ### Test Data Organization
 Tests are located in `PoorMansTSqlFormatterTest/Data/` with three subdirectories:
