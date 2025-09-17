@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.0.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3049502E-2389-4C0B-88EB-485A0C4C79C1}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSqlFormatter.Core", "TSqlFormatter.Core\TSqlFormatter.Core.csproj", "{BDBDFDCA-CAB6-4569-9151-0BD42E65B401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSqlFormatter.SSMS", "TSqlFormatter.SSMS\TSqlFormatter.SSMS.csproj", "{879B3998-C5A5-4B64-8674-70BE959ACE6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDBDFDCA-CAB6-4569-9151-0BD42E65B401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDBDFDCA-CAB6-4569-9151-0BD42E65B401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDBDFDCA-CAB6-4569-9151-0BD42E65B401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDBDFDCA-CAB6-4569-9151-0BD42E65B401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{879B3998-C5A5-4B64-8674-70BE959ACE6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{879B3998-C5A5-4B64-8674-70BE959ACE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{879B3998-C5A5-4B64-8674-70BE959ACE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{879B3998-C5A5-4B64-8674-70BE959ACE6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8046C77-CCFC-4EF0-B5E6-C7993D5E7362}
+	EndGlobalSection
+EndGlobal
