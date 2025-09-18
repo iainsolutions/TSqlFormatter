@@ -1,0 +1,8 @@
+F:\Git\PoorMansTSqlFormatter\TSqlFormatter.Core\bin\Release\net9.0\TSqlFormatter.Core.deps.json
+F:\Git\PoorMansTSqlFormatter\TSqlFormatter.Core\bin\Release\net9.0\TSqlFormatter.Core.dll
+F:\Git\PoorMansTSqlFormatter\TSqlFormatter.Core\bin\Release\net9.0\TSqlFormatter.Core.pdb
+F:\Git\PoorMansTSqlFormatter\TSqlFormatter.Core\obj\Release\net9.0\TSqlFormatter.Core.GeneratedMSBuildEditorConfig.editorconfig
+F:\Git\PoorMansTSqlFormatter\TSqlFormatter.Core\obj\Release\net9.0\TSqlFormatter.Core.csproj.CoreCompileInputs.cache
+F:\Git\PoorMansTSqlFormatter\TSqlFormatter.Core\obj\Release\net9.0\TSqlFormatter.Core.sourcelink.json
+F:\Git\PoorMansTSqlFormatter\TSqlFormatter.Core\obj\Release\net9.0\TSqlFormatter.Core.dll
+F:\Git\PoorMansTSqlFormatter\TSqlFormatter.Core\obj\Release\net9.0\TSqlFormatter.Core.pdb

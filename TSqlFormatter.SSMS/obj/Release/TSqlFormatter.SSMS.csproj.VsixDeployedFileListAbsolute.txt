@@ -1,0 +1,7 @@
+C:\Program Files\Microsoft SQL Server Management Studio 21\Release\Common7\IDE\Extensions\TSqlFormatter\\TSqlFormatter.SSMS.dll
+C:\Program Files\Microsoft SQL Server Management Studio 21\Release\Common7\IDE\Extensions\TSqlFormatter\\TSqlFormatter.SSMS.pdb
+C:\Program Files\Microsoft SQL Server Management Studio 21\Release\Common7\IDE\Extensions\TSqlFormatter\\TSqlFormatter.Core.dll
+C:\Program Files\Microsoft SQL Server Management Studio 21\Release\Common7\IDE\Extensions\TSqlFormatter\\TSqlFormatter.Core.pdb
+C:\Program Files\Microsoft SQL Server Management Studio 21\Release\Common7\IDE\Extensions\TSqlFormatter\\TSqlFormatter.SSMS.pkgdef
+C:\Program Files\Microsoft SQL Server Management Studio 21\Release\Common7\IDE\Extensions\TSqlFormatter\\createTemplateManifests.cache
+C:\Program Files\Microsoft SQL Server Management Studio 21\Release\Common7\IDE\Extensions\TSqlFormatter\\extension.vsixmanifest

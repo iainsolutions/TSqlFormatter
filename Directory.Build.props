@@ -1,0 +1,49 @@
+<Project>
+  <PropertyGroup>
+    <!-- Common Version Info -->
+    <Version>1.7.0</Version>
+    <AssemblyVersion>1.7.0.0</AssemblyVersion>
+    <FileVersion>1.7.0.0</FileVersion>
+    <InformationalVersion>1.7.0</InformationalVersion>
+
+    <!-- Common Properties -->
+    <Authors>Tao Klerks</Authors>
+    <Company />
+    <Product>T-SQL Formatter</Product>
+    <Copyright>Copyright © 2011-2025 Tao Klerks</Copyright>
+    <PackageProjectUrl>https://github.com/TaoK/PoorMansTSqlFormatter</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TaoK/PoorMansTSqlFormatter</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
+
+    <!-- Build Configuration -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Deterministic>true</Deterministic>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+
+    <!-- Ensure PDB files are generated and included in VSIX -->
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+
+    <!-- Code Analysis -->
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+
+    <!-- Output Paths -->
+    <BaseOutputPath>bin\</BaseOutputPath>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+</Project>

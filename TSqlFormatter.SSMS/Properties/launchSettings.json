@@ -1,0 +1,17 @@
+{
+  "profiles": {
+    "SSMS 21 Debug": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Microsoft SQL Server Management Studio 21\\Release\\Common7\\IDE\\Ssms.exe",
+      "commandLineArgs": "/rootsuffix Exp /log",
+      "environmentVariables": {
+        "VsLogActivity": "1"
+      }
+    },
+    "SSMS 21 Release": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Microsoft SQL Server Management Studio 21\\Release\\Common7\\IDE\\Ssms.exe",
+      "commandLineArgs": "/log"
+    }
+  }
+}

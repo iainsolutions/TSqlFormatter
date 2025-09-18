@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files\Microsoft SQL Server Management Studio 21\Release\Common7\IDE\Ssms.exe</StartProgram>
+    <StartArguments>/rootsuffix Exp /log</StartArguments>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <EnableSQLServerDebugging>false</EnableSQLServerDebugging>
+    <DeployExtension>true</DeployExtension>
+    <CreateVsixContainer>true</CreateVsixContainer>
+    <DeployVSTemplates>false</DeployVSTemplates>
+    <CopyVsixExtensionFiles>false</CopyVsixExtensionFiles>
+    <RegisterWithCodebase>true</RegisterWithCodebase>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files\Microsoft SQL Server Management Studio 21\Release\Common7\IDE\Ssms.exe</StartProgram>
+    <StartArguments>/rootsuffix Exp</StartArguments>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DeployExtension>true</DeployExtension>
+    <CreateVsixContainer>true</CreateVsixContainer>
+    <DeployVSTemplates>false</DeployVSTemplates>
+    <CopyVsixExtensionFiles>true</CopyVsixExtensionFiles>
+    <CopyVsixExtensionLocation>C:\Program Files\Microsoft SQL Server Management Studio 21\Release\Common7\IDE\Extensions\TSqlFormatter</CopyVsixExtensionLocation>
+    <RegisterWithCodebase>true</RegisterWithCodebase>
+  </PropertyGroup>
+</Project>

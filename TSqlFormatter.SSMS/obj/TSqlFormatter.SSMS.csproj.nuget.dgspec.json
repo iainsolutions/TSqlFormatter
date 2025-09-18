@@ -1,0 +1,97 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\Git\\PoorMansTSqlFormatter\\TSqlFormatter.SSMS\\TSqlFormatter.SSMS.csproj": {}
+  },
+  "projects": {
+    "F:\\Git\\PoorMansTSqlFormatter\\TSqlFormatter.Core\\TSqlFormatter.Core.csproj": {
+      "restore": {
+        "projectUniqueName": "F:\\Git\\PoorMansTSqlFormatter\\TSqlFormatter.Core\\TSqlFormatter.Core.csproj",
+        "projectName": "TSqlFormatter.Core",
+        "projectPath": "F:\\Git\\PoorMansTSqlFormatter\\TSqlFormatter.Core\\TSqlFormatter.Core.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "F:\\Git\\PoorMansTSqlFormatter\\TSqlFormatter.SSMS\\TSqlFormatter.SSMS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Git\\PoorMansTSqlFormatter\\TSqlFormatter.SSMS\\TSqlFormatter.SSMS.csproj",
+        "projectName": "TSqlFormatter.SSMS",
+        "projectPath": "F:\\Git\\PoorMansTSqlFormatter\\TSqlFormatter.SSMS\\TSqlFormatter.SSMS.csproj",
+        "packagesPath": "C:\\Users\\iknight\\.nuget\\packages\\",
+        "outputPath": "F:\\Git\\PoorMansTSqlFormatter\\TSqlFormatter.SSMS\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "UsingMicrosoftNETSdk": false,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\iknight\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "F:\\Git\\PoorMansTSqlFormatter\\TSqlFormatter.Core\\TSqlFormatter.Core.csproj": {
+                "projectPath": "F:\\Git\\PoorMansTSqlFormatter\\TSqlFormatter.Core\\TSqlFormatter.Core.csproj"
+              }
+            }
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "Microsoft.VSSDK.BuildTools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[17.5.4072, )"
+            },
+            "Microsoft.VisualStudio.SDK": {
+              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[17.0.32112.339, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

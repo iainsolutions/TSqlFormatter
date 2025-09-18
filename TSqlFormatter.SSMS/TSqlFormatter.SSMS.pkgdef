@@ -1,0 +1,25 @@
+[$RootKey$\Packages\{c47a9b21-2692-47d6-972a-976544685f0f}]
+@="TSqlFormatter.SSMS.FormatterPackage, TSqlFormatter.SSMS, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null"
+"InprocServer32"="$WinDir$\SYSTEM32\MSCOREE.DLL"
+"Class"="TSqlFormatter.SSMS.FormatterPackage"
+"CodeBase"="$PackageFolder$\TSqlFormatter.SSMS.dll"
+
+[$RootKey$\Packages\{c47a9b21-2692-47d6-972a-976544685f0f}\SatelliteDll]
+
+[$RootKey$\InstalledProducts\TSqlFormatterSSMS]
+@="T-SQL Formatter"
+"Package"="{c47a9b21-2692-47d6-972a-976544685f0f}"
+"ProductDetails"="A simple T-SQL formatting extension for SQL Server Management Studio."
+"PID"="1.7.0"
+
+[$RootKey$\AutoLoadPackages\{ADFC4E64-0397-11D1-9F4E-00A0C911004F}]
+"{c47a9b21-2692-47d6-972a-976544685f0f}"=dword:00000001
+
+[$RootKey$\AutoLoadPackages\{F1536EF8-92EC-443C-9ED7-FDADF150DA82}]
+"{c47a9b21-2692-47d6-972a-976544685f0f}"=dword:00000001
+
+[$RootKey$\AutoLoadPackages\{10534154-102D-46E2-ABA8-A6BFA25E8012}]
+"{c47a9b21-2692-47d6-972a-976544685f0f}"=dword:00000001
+
+[$RootKey$\Menus]
+"{6fa2e413-8351-4ca9-b0a0-34a9b241648c}"=",1000,1"

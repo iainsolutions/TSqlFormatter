@@ -1,32 +1,87 @@
 ﻿
-## Poor Man's T-SQL Formatter
+## T-SQL Formatter
 
-This is a small free .Net 2.0 and JS library (with demo winforms program, web service,
-SSMS and Visual Studio Addin, Command-line utility, Notepad++ plugin, and WinMerge 
-plugin) for reformatting T-SQL code.
+A free, open-source library for formatting T-SQL code, with support for SSMS integration, command-line usage, and various other tools.
 
+> **Based on Poor Man's T-SQL Formatter by Tao Klerks**
+> This project is a continuation and modernization of the original Poor Man's T-SQL Formatter, maintaining full attribution to the original author and all contributors while updating the architecture for modern development.
 
+### Project Structure (2025 Refactor)
+
+The project has been restructured into a modern, maintainable architecture:
+
+* **TSqlFormatter.Core** - Core .NET 4.7.2 library containing all formatting logic
+  * Tokenization and parsing engine
+  * Multiple formatter implementations (Standard, Identity, Obfuscating)
+  * Thread-safe node implementation for concurrent usage
+  * Configurable formatting options
+
+* **TSqlFormatter.SSMS** - SSMS 21 extension package
+  * Full Options dialog for configuration
+  * Keyboard shortcuts (Ctrl+K, Ctrl+F)
+  * Persistent settings via Visual Studio settings store
+
+### Current Solution
+
+* **TSqlFormatter.SSMS21.sln** - Main solution file with streamlined 2-project structure
+
+### Building the Solution
+
+#### Prerequisites:
+* Visual Studio 2019 or later
+* .NET Framework 4.7.2
+* VSSDK (Visual Studio SDK) for building VSIX packages
+
+#### Build Commands:
+```bash
+# Build the new streamlined SSMS 21 solution
+msbuild TSqlFormatter.SSMS21.sln /p:Configuration=Release /p:Platform="Any CPU"
+
+# Or restore packages first if needed
+msbuild /t:Restore TSqlFormatter.SSMS21.sln
+msbuild TSqlFormatter.SSMS21.sln /p:Configuration=Release
+
+# The VSIX package will be created at:
+# TSqlFormatter.SSMS\bin\Release\TSqlFormatter.SSMS.vsix
+```
+
+### Installing in SSMS
+
+1. Close all instances of SSMS
+2. Double-click the generated `TSqlFormatter.SSMS.vsix` file
+3. Follow the installation wizard
+4. Restart SSMS
+5. Access the formatter via:
+   - **Tools > Format T-SQL Code** (or Ctrl+K, Ctrl+F)
+   - **Tools > T-SQL Formatter Options...** for settings
 
 ### Features
 
-* Simple Xml-style parse tree
-* Extensible, with possibility of supporting other SQL dialects (but none implemented)
-* Configurable according to SQL formatting preferences
-* Handles "procedural" T-SQL; this is not just a SQL statement formatter, but it also 
-    formats entire batches, and multi-batch scripts.
-* Optional colorized HTML output
-* Fault-tolerant parsing and formatting - if some unknown SQL construct is encountered
-    or a keyword is misinterpreted, parsing does not fail (but will simply not colorize
-    or indent that portion correctly). If the parsing fails more catastrophically, a 
-    "best effort" will be made and warning displayed (or in the case of interactive 
-    use, eg in SSMS, the operation can be aborted).
-* Reasonably fast: reformatting 1,500 or so files totalling 4MB takes 30 seconds on a 
-    cheap atom-processor (2009) netbook.
-* Works in Microsoft .Net framework, as well as Mono. The Winforms Demo App is not (yet?)
-    available in Mono, but the library itself is fully functional, as is the command-line
-    bulk formatting tool.
-* JS library (transpiled from C#) is fully functional for browser or other (eg Node.js) 
-    contexts.
+* **Core Formatting Engine**
+  * Simple XML-style parse tree for SQL structure representation
+  * Extensible architecture supporting multiple SQL dialects
+  * Thread-safe implementation for concurrent formatting operations
+  * Fault-tolerant parsing - handles unknown constructs gracefully
+
+* **Formatting Options**
+  * **Indentation**: Tabs or spaces with configurable width
+  * **Line Width Control**: Maximum line length (50-999 characters)
+  * **List Formatting**: Expand comma lists, IN lists with various styles
+  * **Expression Formatting**: Boolean expressions, CASE statements, BETWEEN conditions
+  * **JOIN Formatting**: Break at ON clauses
+  * **Keyword Formatting**: Uppercase and standardization options
+  * **Line Breaks**: Control blank lines between clauses and statements
+
+* **Output Formats**
+  * Standard formatted T-SQL
+  * Colorized HTML output
+  * Obfuscated SQL (for demos/examples)
+
+* **Capabilities**
+  * Handles complete T-SQL including procedural code
+  * Formats entire batches and multi-batch scripts
+  * Preserves comments and special formatting where possible
+  * Fast performance - processes large codebases efficiently
 
 
 ### General Limitations
@@ -47,10 +102,11 @@ plugin) for reformatting T-SQL code.
     without WITH are considered to be arguments to a function.
 * Settings may not be correctly maintained across major upgrades of SSMS and Visual Studio
  
+
 ### Known Issues / Todo
 
 * Handling of DDL Triggers (eg "FOR LOGON")
-* Formatting/indenting of ranking functions 
+* Formatting/indenting of ranking functions
 * FxCop checking
 * And other stuff that is tracked in the GitHub issues list
 
@@ -63,11 +119,11 @@ plugin) for reformatting T-SQL code.
 
 ### License & Credits
 
-This application and library is released under the GNU Affero GPL v3: 
+This application and library is released under the GNU Affero GPL v3:
 http://www.gnu.org/licenses/agpl.txt
 
-The homepage for this project is currently: 
-http://www.architectshack.com/PoorMansTSqlFormatter.ashx
+**Original Project**: Poor Man's T-SQL Formatter by Tao Klerks
+Original homepage: http://www.architectshack.com/PoorMansTSqlFormatter.ashx
 
 This project uses several external libraries:
 
@@ -84,6 +140,10 @@ This project uses several external libraries:
 * ILRepack, by François Valdy, for assembly-merging, available from the [github project page](https://github.com/gluck/il-repack).
 * Bridge.Net, by Object.Net, for C#-to-JS transpiling, available from http://bridge.net
 
+#### Original Author
+* **Tao Klerks** - Original creator of Poor Man's T-SQL Formatter
+
+#### Contributors
 Special thanks to contributors that have given their time to make this library better:
 
 * Timothy Klenke
@@ -117,8 +177,11 @@ but not limited to:
 
 Translation work on this project was originally facilitated by [Amanuens](http://amanuens.com/), the online translation platform that is now sadly defunct.
 
-Please contact me with any questions, concerns, or issues: my email address starts
-with tao, and is hosted at klerks dot biz.
+---
 
-Tao Klerks
+**Original Author Contact**: Tao Klerks (tao at klerks dot biz)
+
+**Current Repository**: https://github.com/iainsolutions/TSqlFormatter
+
+This project continues to be developed while maintaining full respect for the original author's work and the open-source license under which it was released.
 
