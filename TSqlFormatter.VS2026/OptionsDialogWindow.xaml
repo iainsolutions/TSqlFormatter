@@ -1,0 +1,113 @@
+<platform:DialogWindow x:Class="TSqlFormatter.VS2026.OptionsDialogWindow"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:platform="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.15.0"
+                       Title="T-SQL Formatter Options"
+                       Height="650"
+                       Width="900"
+                       WindowStartupLocation="CenterOwner"
+                       ResizeMode="CanResize"
+                       MinHeight="600"
+                       MinWidth="850">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TabControl Grid.Row="0" Margin="0,0,0,10">
+            <!-- Formatting Tab -->
+            <TabItem Header="Formatting">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="10">
+                        <!-- Indentation Section -->
+                        <GroupBox Header="Indentation" Margin="0,0,0,10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <RadioButton Grid.Row="0" Grid.Column="0" Content="Tabs" Name="rbTabs" GroupName="IndentType" Margin="0,5" VerticalAlignment="Center"/>
+                                <RadioButton Grid.Row="0" Grid.Column="2" Content="Spaces" Name="rbSpaces" GroupName="IndentType" IsChecked="True" Margin="20,5,0,5" VerticalAlignment="Center"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Content="Spaces per tab:" Margin="0,5" VerticalAlignment="Center"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Name="txtSpacesPerTab" Text="4" Margin="5" VerticalAlignment="Center" Height="22"/>
+
+                                <Label Grid.Row="1" Grid.Column="2" Content="Max line width:" Margin="20,5,0,5" VerticalAlignment="Center"/>
+                                <TextBox Grid.Row="1" Grid.Column="3" Name="txtMaxLineWidth" Text="999" Margin="5" VerticalAlignment="Center" Height="22"/>
+                            </Grid>
+                        </GroupBox>
+
+                        <!-- Expansion Options Section -->
+                        <GroupBox Header="Expansion Options" Margin="0,0,0,10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0">
+                                    <CheckBox Content="Expand comma lists" Name="chkExpandCommaLists" IsChecked="True" Margin="0,5"/>
+                                    <CheckBox Content="Expand boolean expressions" Name="chkExpandBooleanExpressions" IsChecked="True" Margin="0,5"/>
+                                    <CheckBox Content="Expand BETWEEN conditions" Name="chkExpandBetweenConditions" IsChecked="True" Margin="0,5"/>
+                                    <CheckBox Content="Break JOIN on sections" Name="chkBreakJoinOnSections" Margin="0,5"/>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="1">
+                                    <CheckBox Content="Use trailing commas" Name="chkTrailingCommas" Margin="0,5"/>
+                                    <CheckBox Content="Expand CASE statements" Name="chkExpandCaseStatements" IsChecked="True" Margin="0,5"/>
+                                    <CheckBox Content="Expand IN lists" Name="chkExpandInLists" IsChecked="True" Margin="0,5"/>
+                                    <CheckBox Content="Space after expanded comma" Name="chkSpaceAfterExpandedComma" Margin="0,5"/>
+                                </StackPanel>
+                            </Grid>
+                        </GroupBox>
+
+                        <!-- Line Breaks Section -->
+                        <GroupBox Header="Line Breaks" Margin="0,0,0,10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0" Content="Line breaks between clauses:" Margin="0,5" VerticalAlignment="Center"/>
+                                <TextBox Grid.Column="1" Name="txtNewClauseLineBreaks" Text="1" Margin="5" VerticalAlignment="Center" Height="22"/>
+
+                                <Label Grid.Column="3" Content="Line breaks between statements:" Margin="20,5,0,5" VerticalAlignment="Center"/>
+                                <TextBox Grid.Column="4" Name="txtNewStatementLineBreaks" Text="2" Margin="5" VerticalAlignment="Center" Height="22"/>
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <!-- Case Tab -->
+            <TabItem Header="Case">
+                <StackPanel Margin="10">
+                    <CheckBox Content="Uppercase keywords" Name="chkUppercaseKeywords" IsChecked="True" Margin="0,5"/>
+                    <CheckBox Content="Standardize keywords" Name="chkStandardizeKeywords" Margin="0,5"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="btnDefaults" Content="Defaults" Width="100" Height="28" Margin="0,0,10,0" Click="OnDefaultsClick"/>
+            <Button Name="btnOK" Content="OK" Width="100" Height="28" Margin="0,0,10,0" IsDefault="True" Click="OnOKClick"/>
+            <Button Name="btnCancel" Content="Cancel" Width="100" Height="28" IsCancel="True" Click="OnCancelClick"/>
+        </StackPanel>
+    </Grid>
+</platform:DialogWindow>

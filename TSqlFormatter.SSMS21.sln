@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSqlFormatter.Core", "TSqlF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSqlFormatter.SSMS", "TSqlFormatter.SSMS\TSqlFormatter.SSMS.csproj", "{879B3998-C5A5-4B64-8674-70BE959ACE6F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSqlFormatter.VS2026", "TSqlFormatter.VS2026\TSqlFormatter.VS2026.csproj", "{A5B94F91-3D2C-4E1F-9A7E-8C3D6F5E4B2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{879B3998-C5A5-4B64-8674-70BE959ACE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{879B3998-C5A5-4B64-8674-70BE959ACE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{879B3998-C5A5-4B64-8674-70BE959ACE6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5B94F91-3D2C-4E1F-9A7E-8C3D6F5E4B2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5B94F91-3D2C-4E1F-9A7E-8C3D6F5E4B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5B94F91-3D2C-4E1F-9A7E-8C3D6F5E4B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5B94F91-3D2C-4E1F-9A7E-8C3D6F5E4B2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

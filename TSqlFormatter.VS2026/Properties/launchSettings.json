@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  // Note: These paths assume default Visual Studio installation locations.
+  // If Visual Studio is installed elsewhere, update the executablePath for your environment.
+  "profiles": {
+    "VS 2022 Debug (Default Path)": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\IDE\\devenv.exe",
+      "commandLineArgs": "/rootsuffix Exp /log",
+      "environmentVariables": {
+        "VsLogActivity": "1"
+      }
+    },
+    "VS 2022 Release (Default Path)": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\IDE\\devenv.exe",
+      "commandLineArgs": "/log"
+    },
+    "VS 2026 Debug (C: Drive)": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Microsoft Visual Studio\\2026\\Professional\\Common7\\IDE\\devenv.exe",
+      "commandLineArgs": "/rootsuffix Exp /log",
+      "environmentVariables": {
+        "VsLogActivity": "1"
+      }
+    },
+    "VS 2026 Debug (F: Drive)": {
+      "commandName": "Executable",
+      "executablePath": "F:\\Program Files\\Microsoft Visual Studio\\2026\\Professional\\Common7\\IDE\\devenv.exe",
+      "commandLineArgs": "/rootsuffix Exp /log",
+      "environmentVariables": {
+        "VsLogActivity": "1"
+      }
+    },
+    "VS 2026 Release (F: Drive)": {
+      "commandName": "Executable",
+      "executablePath": "F:\\Program Files\\Microsoft Visual Studio\\2026\\Professional\\Common7\\IDE\\devenv.exe",
+      "commandLineArgs": "/log"
+    },
+    "Visual Studio - Custom Path": {
+      "commandName": "Executable",
+      "executablePath": "C:\\PATH\\TO\\YOUR\\VISUAL\\STUDIO\\Common7\\IDE\\devenv.exe",
+      "commandLineArgs": "/rootsuffix Exp /log",
+      "environmentVariables": {
+        "VsLogActivity": "1"
+      }
+    }
+  }
+}
