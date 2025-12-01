@@ -1,6 +1,12 @@
 {
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  // Note: These paths assume default SSMS installation locations.
+  // If SSMS is installed elsewhere, update the executablePath for your environment.
+  // Common alternative locations:
+  //   - C:\Program Files (x86)\Microsoft SQL Server Management Studio XX\...
+  //   - Custom installation directory chosen during setup
   "profiles": {
-    "SSMS 21 Debug": {
+    "SSMS 21 Debug (Default Path)": {
       "commandName": "Executable",
       "executablePath": "C:\\Program Files\\Microsoft SQL Server Management Studio 21\\Release\\Common7\\IDE\\Ssms.exe",
       "commandLineArgs": "/rootsuffix Exp /log",
@@ -8,10 +14,31 @@
         "VsLogActivity": "1"
       }
     },
-    "SSMS 21 Release": {
+    "SSMS 21 Release (Default Path)": {
       "commandName": "Executable",
       "executablePath": "C:\\Program Files\\Microsoft SQL Server Management Studio 21\\Release\\Common7\\IDE\\Ssms.exe",
       "commandLineArgs": "/log"
+    },
+    "SSMS 22 Debug (Default Path)": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Microsoft SQL Server Management Studio 22\\Common7\\IDE\\Ssms.exe",
+      "commandLineArgs": "/rootsuffix Exp /log",
+      "environmentVariables": {
+        "VsLogActivity": "1"
+      }
+    },
+    "SSMS 22 Release (Default Path)": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Microsoft SQL Server Management Studio 22\\Common7\\IDE\\Ssms.exe",
+      "commandLineArgs": "/log"
+    },
+    "SSMS - Custom Path": {
+      "commandName": "Executable",
+      "executablePath": "C:\\PATH\\TO\\YOUR\\SSMS\\Common7\\IDE\\Ssms.exe",
+      "commandLineArgs": "/rootsuffix Exp /log",
+      "environmentVariables": {
+        "VsLogActivity": "1"
+      }
     }
   }
 }

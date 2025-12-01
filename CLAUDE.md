@@ -6,30 +6,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Poor Man's T-SQL Formatter is a .NET 2.0 and JavaScript library for reformatting T-SQL code. It includes multiple components: a core formatting library, WinForms demo app, SSMS/Visual Studio add-ins, command-line utility, Notepad++ plugin, WinMerge plugin, and web service.
 
-The project maintains three main solutions:
-- `PoorMansTSqlFormatter.sln` - Main solution with all components
-- `PoorMansTSqlFormatterSSMS21.sln` - Legacy SSMS 21 support (4 projects)
-- `TSqlFormatter.SSMS21.sln` - New streamlined SSMS 21 solution (2 projects: Core + SSMS)
+The project maintains a streamlined solution:
+- `TSqlFormatter.SSMS21.sln` - Streamlined solution for SSMS 21+ (2 projects: Core + SSMS)
+  - Supports SSMS 21, 22, and later versions
 
 ## Build Commands
 
-### Building the Solutions
+### Building the Solution
 ```bash
-# Build the main solution (requires Visual Studio 2013+ or MSBuild)
-msbuild PoorMansTSqlFormatter.sln /p:Configuration=Release /p:Platform="Any CPU"
-
-# Build the streamlined SSMS 21 solution
+# Build the SSMS solution (requires Visual Studio 2022+ or MSBuild)
+# Supports SSMS 21, 22, and later versions
 msbuild TSqlFormatter.SSMS21.sln /p:Configuration=Release /p:Platform="Any CPU"
 
-# Build the legacy SSMS 21 solution
-msbuild PoorMansTSqlFormatterSSMS21.sln /p:Configuration=Release /p:Platform="Any CPU"
-
 # Restore NuGet packages before building (if needed)
-msbuild /t:Restore PoorMansTSqlFormatter.sln
 msbuild /t:Restore TSqlFormatter.SSMS21.sln
 
-# Build specific VS/SSMS packages
-msbuild PoorMansTSqlFormatterSSMSPackage2021\PoorMansTSqlFormatterSSMSPackage2021.csproj /p:Configuration=Release
+# Build the SSMS package directly
 msbuild TSqlFormatter.SSMS\TSqlFormatter.SSMS.csproj /p:Configuration=Release
 ```
 
@@ -69,17 +61,12 @@ msbuild TSqlFormatter.SSMS\TSqlFormatter.SSMS.csproj /p:Configuration=Release
 - **PoorMansTSqlFormatterJSLib/** - JavaScript library (transpiled using Bridge.NET)
 
 ### Key Integration Points
-- **Command Line**: PoorMansTSqlFormatterCmdLine - uses NDesk.Options for argument parsing
-- **SSMS Add-ins**:
-  - PoorMansTSqlFormatterSSMSPackage2021 - SSMS 18-21+ (VSIX package, targets `Id="SSMS"`)
-  - TSqlFormatter.SSMS - New streamlined SSMS 21 package
-- **VS Extensions**:
-  - PoorMansTSqlFormatterVSPackage2013 - Visual Studio 2013
-  - PoorMansTSqlFormatterVSPackage2019 - Visual Studio 2019+
-- **Notepad++ Plugin**: PoorMansTSqlFormatterNppPlugin - uses UnmanagedExports for native integration
+- **SSMS Extension**:
+  - TSqlFormatter.SSMS - SSMS 21+ package (VSIX package, targets `Id="Microsoft.VisualStudio.Ssms"`)
+  - Supports SSMS 21, 22, and later versions
 
 ### VSIX Manifest Configuration
-SSMS extensions must target `Id="SSMS"` (not `Microsoft.VisualStudio.Ssms`) with version range like `[21.0,22.0)` for SSMS 21 compatibility.
+SSMS extensions must target `Id="Microsoft.VisualStudio.Ssms"` with version range like `[21.0,)` for SSMS 21+ compatibility. The open-ended range automatically supports future versions including SSMS 22.
 
 ### Test Data Organization
 When tests are configured, they use file-based comparisons:
