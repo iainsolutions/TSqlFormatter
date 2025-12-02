@@ -16,7 +16,7 @@ The project has been restructured into a modern, maintainable architecture:
   * Thread-safe node implementation for concurrent usage
   * Configurable formatting options
 
-* **TSqlFormatter.SSMS** - SSMS 21 extension package
+* **TSqlFormatter.SSMS** - SSMS 21+ extension package (supports SSMS 21, 22, and later)
   * Full Options dialog for configuration
   * Keyboard shortcuts (Ctrl+K, Ctrl+F)
   * Persistent settings via Visual Studio settings store
@@ -28,13 +28,13 @@ The project has been restructured into a modern, maintainable architecture:
 ### Building the Solution
 
 #### Prerequisites:
-* Visual Studio 2019 or later
+* Visual Studio 2022 or later (Visual Studio 2026 recommended)
 * .NET Framework 4.7.2
 * VSSDK (Visual Studio SDK) for building VSIX packages
 
 #### Build Commands:
 ```bash
-# Build the new streamlined SSMS 21 solution
+# Build the streamlined SSMS solution (supports SSMS 21, 22, and later)
 msbuild TSqlFormatter.SSMS21.sln /p:Configuration=Release /p:Platform="Any CPU"
 
 # Or restore packages first if needed
@@ -54,6 +54,22 @@ msbuild TSqlFormatter.SSMS21.sln /p:Configuration=Release
 5. Access the formatter via:
    - **Tools > Format T-SQL Code** (or Ctrl+K, Ctrl+F)
    - **Tools > T-SQL Formatter Options...** for settings
+
+### Debugging the Extension
+
+To debug the extension in Visual Studio:
+
+1. Open the solution in Visual Studio 2022 or later
+2. Set `TSqlFormatter.SSMS` as the startup project
+3. Select a debug profile from the dropdown:
+   - **SSMS 21 Debug** or **SSMS 22 Debug** for default installation paths
+   - **SSMS - Custom Path** if SSMS is installed in a non-standard location
+4. If using a custom path, update `TSqlFormatter.SSMS\Properties\launchSettings.json`:
+   - Edit the `executablePath` to point to your SSMS installation
+   - Example: `C:\Custom\Path\SSMS\Common7\IDE\Ssms.exe`
+5. Press F5 to start debugging
+
+The extension will load into an experimental instance of SSMS with `/rootsuffix Exp`.
 
 ### Features
 
