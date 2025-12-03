@@ -16,7 +16,7 @@ The project has been restructured into a modern, maintainable architecture:
   * Thread-safe node implementation for concurrent usage
   * Configurable formatting options
 
-* **TSqlFormatter.SSMS** - SSMS 21 extension package
+* **TSqlFormatter.SSMS** - SSMS 21+ extension package (supports SSMS 21, 22, and later)
   * Full Options dialog for configuration
   * Keyboard shortcuts (Ctrl+K, Ctrl+F)
   * Persistent settings via Visual Studio settings store
@@ -34,7 +34,7 @@ The project has been restructured into a modern, maintainable architecture:
 ### Building the Solution
 
 #### Prerequisites:
-* Visual Studio 2019 or later
+* Visual Studio 2022 or later (Visual Studio 2026 recommended)
 * .NET Framework 4.7.2
 * VSSDK (Visual Studio SDK) for building VSIX packages
 
