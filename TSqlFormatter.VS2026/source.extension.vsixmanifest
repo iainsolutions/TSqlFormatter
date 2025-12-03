@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="TSqlFormatter.VS2026.2e8f4a3b-9c7d-4e1f-a6b5-8d9e7f6a5c4b" Version="1.7.0" Language="en-US" Publisher="Tao Klerks" />
+    <DisplayName>T-SQL Formatter for Visual Studio</DisplayName>
+    <Description xml:space="preserve">A simple T-SQL formatting extension for Visual Studio 2026 and later.</Description>
+    <MoreInfo>https://github.com/TaoK/PoorMansTSqlFormatter</MoreInfo>
+    <Icon>Resources\FormatterPackage.ico</Icon>
+    <PreviewImage>Resources\FormatterPackage.ico</PreviewImage>
+    <Tags>SQL, T-SQL, formatting, formatter, beautifier, Visual Studio</Tags>
+  </Metadata>
+  <Installation AllUsers="true">
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.0,)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[17.0,)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.7.2,)" />
+  </Dependencies>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,)" DisplayName="Visual Studio core editor" />
+  </Prerequisites>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+  </Assets>
+</PackageManifest>

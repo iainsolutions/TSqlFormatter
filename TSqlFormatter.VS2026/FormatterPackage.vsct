@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+
+  <Commands package="guidFormatterPackage">
+    <Groups>
+      <Group guid="guidFormatterPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidFormatterPackageCmdSet" id="FormatSqlCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidFormatterPackageCmdSet" id="MyMenuGroup" />
+        <Strings>
+          <ButtonText>Format T-SQL Code</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidFormatterPackageCmdSet" id="OptionsCommandId" priority="0x0101" type="Button">
+        <Parent guid="guidFormatterPackageCmdSet" id="MyMenuGroup" />
+        <Strings>
+          <ButtonText>T-SQL Formatter Options...</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <KeyBindings>
+    <KeyBinding guid="guidFormatterPackageCmdSet" id="FormatSqlCommandId" editor="guidVSStd97" key1="K" mod1="CONTROL" key2="F" mod2="CONTROL" />
+  </KeyBindings>
+
+  <Symbols>
+    <GuidSymbol name="guidFormatterPackage" value="{c47a9b21-2692-47d6-972a-976544685f0f}" />
+
+    <GuidSymbol name="guidFormatterPackageCmdSet" value="{6fa2e413-8351-4ca9-b0a0-34a9b241648c}">
+      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="FormatSqlCommandId" value="0x0100" />
+      <IDSymbol name="OptionsCommandId" value="0x0101" />
+    </GuidSymbol>
+
+  </Symbols>
+</CommandTable>

@@ -21,9 +21,15 @@ The project has been restructured into a modern, maintainable architecture:
   * Keyboard shortcuts (Ctrl+K, Ctrl+F)
   * Persistent settings via Visual Studio settings store
 
+* **TSqlFormatter.VS2026** - Visual Studio 2022+ extension package
+  * Supports Visual Studio 2022, 2026, and later
+  * Same formatting options as SSMS extension
+  * Works with SQL files in Visual Studio IDE
+  * Uses traditional VSSDK model for compatibility
+
 ### Current Solution
 
-* **TSqlFormatter.SSMS21.sln** - Main solution file with streamlined 2-project structure
+* **TSqlFormatter.SSMS21.sln** - Main solution file with 3 projects (Core + SSMS + VS2026)
 
 ### Building the Solution
 
@@ -34,19 +40,21 @@ The project has been restructured into a modern, maintainable architecture:
 
 #### Build Commands:
 ```bash
-# Build the streamlined SSMS solution (supports SSMS 21, 22, and later)
+# Build the solution (creates both SSMS and VS extensions)
 msbuild TSqlFormatter.SSMS21.sln /p:Configuration=Release /p:Platform="Any CPU"
 
 # Or restore packages first if needed
 msbuild /t:Restore TSqlFormatter.SSMS21.sln
 msbuild TSqlFormatter.SSMS21.sln /p:Configuration=Release
 
-# The VSIX package will be created at:
-# TSqlFormatter.SSMS\bin\Release\TSqlFormatter.SSMS.vsix
+# The VSIX packages will be created at:
+# TSqlFormatter.SSMS\bin\Release\TSqlFormatter.SSMS.vsix (for SSMS)
+# TSqlFormatter.VS2026\bin\Release\TSqlFormatter.VS2026.vsix (for Visual Studio)
 ```
 
-### Installing in SSMS
+### Installing the Extensions
 
+#### For SSMS:
 1. Close all instances of SSMS
 2. Double-click the generated `TSqlFormatter.SSMS.vsix` file
 3. Follow the installation wizard
@@ -55,21 +63,14 @@ msbuild TSqlFormatter.SSMS21.sln /p:Configuration=Release
    - **Tools > Format T-SQL Code** (or Ctrl+K, Ctrl+F)
    - **Tools > T-SQL Formatter Options...** for settings
 
-### Debugging the Extension
-
-To debug the extension in Visual Studio:
-
-1. Open the solution in Visual Studio 2022 or later
-2. Set `TSqlFormatter.SSMS` as the startup project
-3. Select a debug profile from the dropdown:
-   - **SSMS 21 Debug** or **SSMS 22 Debug** for default installation paths
-   - **SSMS - Custom Path** if SSMS is installed in a non-standard location
-4. If using a custom path, update `TSqlFormatter.SSMS\Properties\launchSettings.json`:
-   - Edit the `executablePath` to point to your SSMS installation
-   - Example: `C:\Custom\Path\SSMS\Common7\IDE\Ssms.exe`
-5. Press F5 to start debugging
-
-The extension will load into an experimental instance of SSMS with `/rootsuffix Exp`.
+#### For Visual Studio 2022/2026:
+1. Close all instances of Visual Studio
+2. Double-click the generated `TSqlFormatter.VS2026.vsix` file
+3. Follow the installation wizard
+4. Restart Visual Studio
+5. Access the formatter via:
+   - **Tools > Format T-SQL Code** (or Ctrl+K, Ctrl+F)
+   - **Tools > T-SQL Formatter Options...** for settings
 
 ### Features
 
